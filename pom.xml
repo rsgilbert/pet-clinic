@@ -14,7 +14,7 @@
 	</parent>
 	<groupId>net.passioncloud</groupId>
 	<artifactId>petclinic</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>petclinic</name>
 	<description>Pet Clinic</description>
 	<properties>
@@ -49,7 +49,7 @@
 
 	<scm>
 		<developerConnection>scm:git:git@github.com:rsgilbert/pet-clinic.git</developerConnection>
-	  <tag>petclinic-0.0.2</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 </project>
