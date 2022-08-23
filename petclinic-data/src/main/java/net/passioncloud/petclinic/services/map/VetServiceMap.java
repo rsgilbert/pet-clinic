@@ -2,8 +2,9 @@ package net.passioncloud.petclinic.services.map;
 
 import net.passioncloud.petclinic.model.Owner;
 import net.passioncloud.petclinic.model.Vet;
+import net.passioncloud.petclinic.services.VetService;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Vet save(Vet vet) {
         Long id = vet.getId();
