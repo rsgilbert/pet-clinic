@@ -5,6 +5,9 @@ import net.passioncloud.petclinic.services.OwnerService;
 
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Owner save(Owner owner) {
@@ -12,6 +15,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
         if(id == null) {
             id = (long) this.map.size();
         }
+        owner.setId(id);
         return this.save(id, owner);
     }
 
