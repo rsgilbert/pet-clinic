@@ -6,5 +6,10 @@
 </head>
 <body>
     <h1 th:text="'List of vets'">List of vets</h1>
+    <ul>
+        <li th:each="vet : ${vets}">
+            <p th:text="${vet.id} + ' : ' + ${vet.firstName} + ' ' + ${vet.lastName}">4 : Joan Lukwe Mutwe</p>
+        </li>
+    </ul>
 </body>
 </html>
