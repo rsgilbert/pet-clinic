@@ -14,7 +14,6 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
         for(Map.Entry<Long,Owner> entry: this.map.entrySet()) {
             if(entry.getValue().getLastName().equals(lastName)) {
                 return entry.getValue();
-                //
             }
         }
         return null;
