@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body}, 'owners')}">
 <head>
     <meta charset="UTF-8">
     <title>List of Vets</title>
 </head>
 <body>
     <h1 th:text="'List of vets'">List of vets</h1>
-    <ul>
-        <li th:each="vet : ${vets}">
-            <p th:text="${vet.id} + ' : ' + ${vet.firstName} + ' ' + ${vet.lastName}">4 : Joan Lukwe Mutwe</p>
-        </li>
-    </ul>
+    <table id="vets" class="table table-stripped">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="vet : ${vets}">
+                <td th:text="${vet.firstName}"></td>
+                <td th:text="${vet.lastName}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
