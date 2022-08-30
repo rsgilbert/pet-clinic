@@ -3,11 +3,13 @@ package net.passioncloud.petclinic.services.jpa;
 import net.passioncloud.petclinic.model.Vet;
 import net.passioncloud.petclinic.repositories.VetRepository;
 import net.passioncloud.petclinic.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Profile({"default", "jpa"})
 @Service
 public class VetServiceJpa implements VetService {
     private final VetRepository vetRepository;

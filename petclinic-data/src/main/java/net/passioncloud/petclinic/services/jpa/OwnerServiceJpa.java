@@ -3,12 +3,14 @@ package net.passioncloud.petclinic.services.jpa;
 import net.passioncloud.petclinic.model.Owner;
 import net.passioncloud.petclinic.repositories.OwnerRepository;
 import net.passioncloud.petclinic.services.OwnerService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
 
+@Profile({"default", "jpa"})
 @Service
 public class OwnerServiceJpa implements OwnerService {
     private final OwnerRepository ownerRepository;

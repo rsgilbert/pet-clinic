@@ -3,12 +3,13 @@ package net.passioncloud.petclinic.services.jpa;
 import net.passioncloud.petclinic.model.PetType;
 import net.passioncloud.petclinic.repositories.PetTypeRepository;
 import net.passioncloud.petclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
-
+@Profile({"default", "jpa"})
 @Service
 public class PetTypeServiceJpa implements PetTypeService {
     private final PetTypeRepository petTypeRepository;

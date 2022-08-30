@@ -4,12 +4,13 @@ package net.passioncloud.petclinic.services.jpa;
 import net.passioncloud.petclinic.model.Specialty;
 import net.passioncloud.petclinic.repositories.SpecialtyRepository;
 import net.passioncloud.petclinic.services.SpecialtyService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
-
+@Profile({"default", "jpa"})
 @Service
 public class SpecialtyServiceJpa implements SpecialtyService {
     private final SpecialtyRepository specialtyRepository;
