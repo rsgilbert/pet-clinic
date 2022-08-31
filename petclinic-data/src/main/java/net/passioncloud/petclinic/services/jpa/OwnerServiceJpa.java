@@ -1,5 +1,6 @@
 package net.passioncloud.petclinic.services.jpa;
 
+import lombok.RequiredArgsConstructor;
 import net.passioncloud.petclinic.model.Owner;
 import net.passioncloud.petclinic.repositories.OwnerRepository;
 import net.passioncloud.petclinic.services.OwnerService;
@@ -10,14 +11,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 
+@RequiredArgsConstructor
 @Profile({"default", "jpa"})
 @Service
 public class OwnerServiceJpa implements OwnerService {
     private final OwnerRepository ownerRepository;
-
-    public OwnerServiceJpa(OwnerRepository ownerRepository) {
-        this.ownerRepository = ownerRepository;
-    }
 
     @Override
     public Set<Owner> findAll() {

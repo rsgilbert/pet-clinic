@@ -1,5 +1,7 @@
 package net.passioncloud.petclinic.services.jpa;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.passioncloud.petclinic.model.Vet;
 import net.passioncloud.petclinic.repositories.VetRepository;
 import net.passioncloud.petclinic.services.VetService;
@@ -9,19 +11,22 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
+
+@RequiredArgsConstructor
+@Slf4j
 @Profile({"default", "jpa"})
 @Service
 public class VetServiceJpa implements VetService {
     private final VetRepository vetRepository;
 
-    public VetServiceJpa(VetRepository vetRepository) {
-        this.vetRepository = vetRepository;
-    }
-
     @Override
     public Set<Vet> findAll() {
         Set<Vet> vets = new HashSet<>();
         vetRepository.findAll().forEach(vets::add);
+        for (Vet v : vets) {
+            System.out.println(v);
+        }
+        ;
         return vets;
     }
 
