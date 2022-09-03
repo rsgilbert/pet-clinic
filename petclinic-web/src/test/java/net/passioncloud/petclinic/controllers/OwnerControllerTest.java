@@ -38,6 +38,7 @@ class OwnerControllerTest {
         Mockito.when(ownerService.findAll()).thenReturn(Set.of(new Owner()));
         mockMvc.perform(MockMvcRequestBuilders.get("/owners"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name(Matchers.equalTo("owners/index")))
                 .andExpect(MockMvcResultMatchers.model().attribute("owners", Matchers.hasSize(1)));
     }
 
